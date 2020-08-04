@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+
+    "name": "GTmetrix Analyzer Plugin",
+    "description": "This extension will analyze a page using GTmetrix",
+    "version": "1.0",
+
+    "browser_action": {
+        "default_icon": "img/serch.jpg",
+        "default_popup": "popups/popup.html"
+    },
+    
+    "web_accessible_resources":[
+    "icon.png",
+    "popup.js"
+    ],
+
+    "permissions": [
+    "activeTab"
+    ]
+}
