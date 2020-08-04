@@ -1,18 +1,30 @@
 // const axios = require('axios');
 import axios from 'axios'
 
-const instance = axios.create({
-    baseURL: 'http://pub-be.k8s-new.qunhequnhe.com',
-    timeout: 1000,
-    headers: {'pub-token': 'df58458b215dd98580f14cd4064d4d82'}
-});
+export function request(pubToken,fc_ids,userId) {
+    const instance = axios.create({
+        baseURL: 'http://pub-be.k8s-new.qunhequnhe.com',
+        timeout: 1000,
+        headers: {'pub-token': pubToken}
+    });
+    return instance.get('/grey/api/plan/fc/plan-list',{
+        params:{
+            stage: 0,
+            fc_ids: fc_ids,
+            ldap: userId
+        }
+    }).then(res => {
+        console.log(res);
+        return res.data;
+    })
+}
 
-instance.get('/grey/api/plan/fc/plan-list',{
-    params:{
-        stage: 0,
-        fc_ids: 'fc_91,fc_787',
-        ldap: 'bingwa'
-    }
-}).then(res => {
-    console.log(res);
-})
+// instance.get('/grey/api/plan/fc/plan-list',{
+//     params:{
+//         stage: 0,
+//         fc_ids: 'fc_91,fc_787',
+//         ldap: 'bingwa'
+//     }
+// }).then(res => {
+//     console.log(res);
+// })

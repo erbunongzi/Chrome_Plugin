@@ -12,9 +12,21 @@
 			}
   </style>
   <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
-  <script src="popup.js"></script>
-  <script src="../dist/request.js"></script>
 </head>
 <body>
+  <div class="content">
+        <div class="title"></div>
+        <form onsubmit="return false">
+            <div><label><span>*</span>fc_ids</label><input id="fc_id" type="text" ></div>
+            <div><label><span>*</span>user_ID</label><input id="user_ID" type="text" placeholder=""></div>
+            <div><label><span>*</span>pub_token</label><input id="pub_token" type="text"></div>
+            <div><button id="fetchBtn" type="button">get message</button></div>
+            <div><button id="clearBtn" type="button">clear labels</button></div>
+        </form>
+        <div>Authority <span id="authority"></span></div>
+  </div>
 </body>
+<script src="popup.js"></script>
+<script src="../dist/app.js"></script>
+<!-- <script src="../dist/request.js"></script> -->
 </html>
